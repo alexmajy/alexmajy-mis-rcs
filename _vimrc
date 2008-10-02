@@ -30,10 +30,14 @@ endfunction
 
 " Languages settings, the setting assume you are working with windows xp
 " simple chinese edition.
-language messages en
+if v:lang =~ "zh_CN"
+  language messages en_US
+endif
 set guioptions=egm
 source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
+set termencoding=cp936
+set encoding=utf-8
 
 " my vim settings start here
 syntax on
