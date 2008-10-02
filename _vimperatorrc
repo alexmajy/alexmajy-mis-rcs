@@ -1,0 +1,15 @@
+" 1.2 (created: 2008/08/16 18:51:52)
+" Mappings
+
+" Options
+
+" Abbreviations
+abbreviate douban.com www.douban.com
+abbreviate gmail mail.google.com
+abbreviate reader https://www.google.com/reader/
+abbreviate chinaren alumni.chinaren.com
+abbreviate hotmail mail.live.com
+
+source! ~/_vimperatorrc.local
+
+" vim: set ft=vimperator:
