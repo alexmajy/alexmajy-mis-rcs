@@ -32,8 +32,8 @@ endfunction
 " simple chinese edition.
 language messages en
 set guioptions=egm
-source delmenu.vim
-source menu.vim
+source $VIMRUNTIME/delmenu.vim
+source $VIMRUNTIME/menu.vim
 
 " my vim settings start here
 syntax on
