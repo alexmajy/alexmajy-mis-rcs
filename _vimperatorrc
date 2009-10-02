@@ -5,7 +5,7 @@ cmap <C-n> <Down>
 
 " menu, right & bottom scroll bar, tab number
 set guioptions=mrbn
-set runtimepath="C:\\cygwin\\home\\alexmajy\\vimperator"
+" set runtimepath="C:\\cygwin\\home\\alexmajy\\vimperator"
 " set runtimepath="~/.vimperator"
 
 " Enable through mode for gmail and greader
