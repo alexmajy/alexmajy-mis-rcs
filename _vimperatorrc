@@ -1,15 +1,27 @@
-" 1.2 (created: 2008/08/16 18:51:52)
-" Mappings
+"2.0 (created: 2009/03/29 00:04:47)
 
-" Options
+cmap <C-p> <Up>
+cmap <C-n> <Down>
 
-" Abbreviations
-abbreviate douban.com www.douban.com
-abbreviate gmail mail.google.com
-abbreviate reader https://www.google.com/reader/
-abbreviate chinaren alumni.chinaren.com
-abbreviate hotmail mail.live.com
+" menu, right & bottom scroll bar, tab number
+set guioptions=mrbn
+set runtimepath="C:\\cygwin\\home\\alexmajy\\vimperator"
+" set runtimepath="~/.vimperator"
 
-source! ~/_vimperatorrc.local
+" Enable through mode for gmail and greader
+autocmd LocationChange .* js modes.passAllKeys = /mail.google.com/.test(buffer.URL) || /google.com\/reader\//.test(buffer.URL)
 
-" vim: set ft=vimperator:
+" Show feed-button at the bottom
+javascript <<EOF
+(function(){
+    var feedPanel = document.createElement("statusbarpanel");
+    feedPanel.setAttribute("id", "feed-panel-clone");
+    feedPanel.appendChild(document.getElementById("feed-button"));
+    feedPanel.firstChild.setAttribute("style", "padding: 0; max-height: 16px;");
+    document.getElementById("status-bar")
+            .insertBefore(feedPanel, document.getElementById("security-button"));
+})();
+EOF
+
+" colorscheme disables "open a new-tab button", "close button on tab bar"
+colorscheme evening
