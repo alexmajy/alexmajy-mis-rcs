@@ -1,12 +1,13 @@
 "2.0 (created: 2009/03/29 00:04:47)
 
+" command mode map for emacs editing style
 cmap <C-p> <Up>
 cmap <C-n> <Down>
+cmap <C-f> <Right>
+cmap <C-b> <Left>
 
 " menu, right & bottom scroll bar, tab number
 set guioptions=mrbn
-" set runtimepath="C:\\cygwin\\home\\alexmajy\\vimperator"
-" set runtimepath="~/.vimperator"
 
 " Enable through mode for gmail and greader
 autocmd LocationChange .* js modes.passAllKeys = /mail.google.com/.test(buffer.URL) || /google.com\/reader\//.test(buffer.URL)
