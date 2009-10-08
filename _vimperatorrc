@@ -9,6 +9,9 @@ cmap <C-b> <Left>
 " menu, right & bottom scroll bar, tab number
 set guioptions=mrbn
 
+" enable bookmark in autocomplete
+set cpt=slfb
+
 " Enable through mode for gmail and greader
 autocmd LocationChange .* js modes.passAllKeys = /mail.google.com/.test(buffer.URL) || /google.com\/reader\//.test(buffer.URL)
 
