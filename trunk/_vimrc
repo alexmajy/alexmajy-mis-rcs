@@ -1,6 +1,7 @@
 " TODO:
 " 1. select different colorschemes, font type size according to GUI or terminal
 " 2. a nicer language encoding detection
+" 3. tex integration with windows support
 
 
 set nocompatible
@@ -44,7 +45,16 @@ if s:MSWIN
 else
     "set encoding=utf-8
     set fileencodings=utf-8,gb18030,utf-16,big5
-    set guifont=Consolas:h10,ProggyTiny:h8,Luxi_Mono:h12:cANSI
+    
+    " set backupdir i.e. hello.c~
+    set backupdir=$HOME/.vim/vim_bkp,.
+    " set dir for swap files
+    set dir=$HOME/.vim/vim_bkp,.
+
+    if has('gui')
+        set guifont=Andale\ Mono\ 9
+	set guioptions=egm
+    endif
 endif
 
 
@@ -154,7 +164,17 @@ if s:MSWIN
     let Grep_Skip_Dirs='CVS .svn' 
     "let Grep_Default_Options='-i' 
     let Grep_Skip_Files='*~' 
-end
+endif
 
+" configuration for latex vim
+if s:MSWIN
+    " IMPORTANT: win32 users will need to have 'shellslash' set so that latex
+    " can be called correctly.
+    set shellslash
+endif
+" OPTIONAL: Starting with Vim 7, the filetype of empty .tex files defaults to
+" 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
+" The following changes the default filetype back to 'tex':
+let g:tex_flavor='latex'
 
 
