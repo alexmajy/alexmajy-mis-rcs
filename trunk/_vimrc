@@ -1,3 +1,8 @@
+" TODO:
+" 1. select different colorschemes, font type size according to GUI or terminal
+" 2. a nicer language encoding detection
+
+
 set nocompatible
 source $VIMRUNTIME/vimrc_example.vim
 set t_vb=
