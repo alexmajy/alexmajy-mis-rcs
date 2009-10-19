@@ -4,6 +4,9 @@
 
 SVN_DIR=$HOME/alexmajy-mis-rcs
 
+echo "Update svn repository..."
+svn update
+
 read -p "Update *$HOME/[.vimrc|.vim]* from $SVN_DIR, <y/n>"
 
 if [ "$REPLY" = "y" ]; then
