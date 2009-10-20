@@ -1,0 +1,40 @@
+set imap_user = "alexmajy@gmail.com"
+set imap_pass = ""
+
+set from = "alexmajy@gmail.com"
+set realname = "Junyan MA"
+
+set smtp_url = "smtp://alexmajy@smtp.gmail.com:587/"
+set smtp_pass = ""
+
+set folder = "imaps://imap.gmail.com:993"
+set spoolfile = "imaps://imap.gmail.com:993/INBOX"
+set record = ""
+set postponed = "imaps://imap.gmail.com/[Gmail]/Drafts"
+set trash = "imaps://imap.gmail.com/[Gmail]/Trash"
+
+set header_cache = ~/.mutt/cache/headers
+set message_cachedir = ~/.mutt/cache/bodies
+set certificate_file = ~/.mutt/certificates
+set move = no
+set imap_check_subscribed="yes"
+set imap_list_subscribed="yes"
+#set mbox="imaps://imap.gmail.com/[Gmail]/All Mail"
+
+set mail_check = 60
+bind index "^" imap-fetch-mail
+bind index,pager s save-message 
+
+hdr_order Date From To Cc
+
+#and maybe some useful bindingsmacro index,pager y "<save-message>=[Gmail]/All
+macro index,pager y "<save-message>=[Gmail]/All<tab><enter><enter>" "Archive" 
+macro index,pager d "<save-message>=[Gmail]/Trash<enter><enter>" "Trash"
+#macro index,pager s "<save-message>=[Gmail]/Spam<enter><enter>" "Spam"
+macro index gi "<change-folder>=INBOX<enter>" "Go to inbox"
+macro index ga "<change-folder>=[Gmail]/All<quote-char>  Mail<enter>" "Go to all mail"
+#macro index gs "<change-folder>=[Gmail]/Starred<enter>" "Go to starred messages"
+macro index gd "<change-folder>=[Gmail]/Drafts<enter>" "Go to drafts"
+macro index gs "<change-folder>=[Gmail]/Sent<quote-char> Mail<enter>" "Go to sent Mail"
+macro index gp "<change-folder>=[Gmail]/Spam<enter>" "Go to Spam"
+
