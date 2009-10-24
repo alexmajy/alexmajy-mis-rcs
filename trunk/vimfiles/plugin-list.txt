@@ -1,4 +1,4 @@
-cvim,	1.87
+cvim, 1.87
 NERD_commenter, 2.2.2
 minibufexpl, 6.3.2
 visualmark, 0.4
@@ -7,5 +7,7 @@ a.vim, 2.18
 grep.vim, 1.9
 python_fn, 1.13
 tasklist.vim, 1.0.1
-vim-latex 1.5-20091002-r1074
-project 1.4.1
+vim-latex, 1.5-20091002-r1074
+project, 1.4.1
+snippetsEmu,1.2.3
+snippy_bundles.vba, 1.2
