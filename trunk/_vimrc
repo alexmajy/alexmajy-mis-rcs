@@ -15,7 +15,7 @@ if v:lang =~ "zh_CN"
 endif
 
 " enable wrap in chinese text
-"set formatoptions+=mM
+set formatoptions+=mM
 
 "###############################################################################################
 " platform specific settings
