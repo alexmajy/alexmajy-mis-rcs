@@ -1,7 +1,6 @@
 " TODO:
 " 1. select different colorschemes, font type size according to GUI or terminal
 " 2. a nicer language encoding detection
-" 3. tex integration with windows support
 
 
 set nocompatible
@@ -26,6 +25,7 @@ if s:MSWIN
     " since the default encoding under win32 is cp936(gb2312), we prefer that
     set fileencodings=cp936,utf-8,gb18030,utf-16,big5
     set termencoding=cp936
+    set fileformat=unix
     if has("gui_win32")
 	" Try to use a smaller font, geeks like more lines in their screen!
 	set guifont=Consolas:h10,ProggyTiny:h8,Luxi_Mono:h12:cANSI
@@ -171,10 +171,17 @@ if s:MSWIN
     " IMPORTANT: win32 users will need to have 'shellslash' set so that latex
     " can be called correctly.
     set shellslash
+    let g:Tex_DefaultTargetFormat='pdf'
+    let g:Tex_CompileRule_pdf='texify --pdf $*'
 endif
 " OPTIONAL: Starting with Vim 7, the filetype of empty .tex files defaults to
 " 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
 " The following changes the default filetype back to 'tex':
 let g:tex_flavor='latex'
+
+" c.vim, turn off c-j so that we can navigate by c-j
+let g:C_Ctrl_j='off'
+autocmd FileType cpp imap    <buffer>  <silent>  <C-j>    <C-R>=C_JumpCtrlJ()<CR>
+autocmd FileType c imap    <buffer>  <silent>  <C-j>    <C-R>=C_JumpCtrlJ()<CR>
 
 
