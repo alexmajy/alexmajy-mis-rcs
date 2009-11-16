@@ -44,6 +44,7 @@ if s:MSWIN
     au GUIEnter * simalt ~x
 else
     "set encoding=utf-8
+    "let &termencoding=&encoding
     set fileencodings=utf-8,gb18030,utf-16,big5
     
     " set backupdir i.e. hello.c~
@@ -53,7 +54,7 @@ else
 
     if has('gui')
         set guifont=Andale\ Mono\ 9
-	set guioptions=egm
+	set guioptions=egma
     endif
 endif
 
@@ -79,7 +80,7 @@ set wildmenu
 " wrap on whole word which maybe help when text editing
 set autochdir    " auto change directory according to current file
 " set clipboard equal unnamed
-set clipboard=unnamed
+"set clipboard=unnamed
 
 "###############################################################################################
 " search & replace 
@@ -178,6 +179,7 @@ endif
 " 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
 " The following changes the default filetype back to 'tex':
 let g:tex_flavor='latex'
+let g:Tex_DefaultTargetFormat='pdf'
 
 " c.vim, turn off c-j so that we can navigate by c-j
 let g:C_Ctrl_j='off'
