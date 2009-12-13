@@ -1,5 +1,5 @@
 " TODO:
-" 1. select different colorschemes, font type size according to GUI or terminal
+" 1. select better font type and size for GUI
 " 2. a nicer language encoding detection
 
 
@@ -26,7 +26,7 @@ if s:MSWIN
     set fileencodings=cp936,utf-8,gb18030,utf-16,big5
     set termencoding=cp936
     set fileformat=unix
-    if has("gui_win32")
+    if has("gui_running")
 	" Try to use a smaller font, geeks like more lines in their screen!
 	set guifont=Consolas:h10,ProggyTiny:h8,Luxi_Mono:h12:cANSI
 	set guioptions=egm
@@ -52,7 +52,7 @@ else
     " set dir for swap files
     set dir=$HOME/.vim/vim_bkp,.
 
-    if has('gui')
+    if has('gui_running')
         set guifont=Andale\ Mono\ 9
 	set guioptions=egma
     endif
@@ -65,7 +65,12 @@ endif
 "set columns=90 lines=65
 "set background=light
 "set background=dark
-colorscheme desert
+if has('gui_running')
+    colorscheme desert
+else
+    colorscheme torte
+endif
+
 set statusline=[%F]%y%r%m%*%=[Line:%l/%L,Column:%c][%p%%]
 set laststatus=2
 set ruler
@@ -115,8 +120,9 @@ nmap <F4> :nohlsearch<cr>
 nmap <F5> :copen<cr>
 nmap <F6> :cclose<cr>
 nnoremap <silent> <F8> :A<CR>
-nmap <F12> :cn<cr>    
-nmap <F11> :cp<cr>   
+"nmap <F12> :cn<cr>    
+"nmap <F11> :cp<cr>   
+nmap <F12> :Project<cr>
 
 
 "###############################################################################################
